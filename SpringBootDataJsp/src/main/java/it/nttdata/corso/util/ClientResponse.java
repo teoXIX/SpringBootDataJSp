@@ -1,9 +1,9 @@
 package it.nttdata.corso.util;
 
 public class ClientResponse {
-    
+
     private boolean success;
-    
+
     private String message;
 
     public ClientResponse(boolean success, String message) {
@@ -25,5 +25,5 @@ public class ClientResponse {
 
     public void setMessage(String message) {
         this.message = message;
-    } 
+    }
 }

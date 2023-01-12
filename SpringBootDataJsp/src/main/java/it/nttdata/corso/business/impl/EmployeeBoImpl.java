@@ -33,25 +33,25 @@ public class EmployeeBoImpl implements EmployeeBO {
     }
 
     @Override
-    public List<Employee> findAllUsers() {       
-         return (List<Employee>) employeeRepository
-                 .findAll();
+    public List<Employee> findAllUsers() {
+        return (List<Employee>) employeeRepository
+                .findAll();
     }
 
     @Override
     public List<Employee> findByEmail(String email) {
-       return employeeRepository
+        return employeeRepository
                 .findByEmailIgnoreCaseContaining(email);
     }
 
     @Override
     public List<Employee> findByDepartmentName(String name) {
-         return employeeRepository.findByDepartmentNameContainingIgnoringCase(name);
+        return employeeRepository.findByDepartmentNameContainingIgnoringCase(name);
     }
 
     @Override
     public List<Employee> findByGenderAndDepartment(char gender, String depName) {
         return employeeRepository.
-               findByGenderAndDepartmentName(gender, depName);
+                findByGenderAndDepartmentName(gender, depName);
     }
 }

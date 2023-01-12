@@ -28,11 +28,11 @@ public class DepartmentBoImpl implements DepartmentBO {
     public void update(Department department) {
         departmentRepository.save(department);
     }
- 
+
     @Override
     public void delete(int uid) {
         Optional<Department> departmentDb = departmentRepository.findById(uid);
-        
+
         if ( departmentDb.isPresent() ) {
             Department department = departmentDb.get();
             department.getEmployees().forEach( e -> e.setDepartment(null) );

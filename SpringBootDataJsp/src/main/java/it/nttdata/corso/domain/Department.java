@@ -9,17 +9,17 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "department")
 public class Department extends BaseEntity {
-    
+
     private static final long serialVersionUID = 1L;
 
     private String name;
-    
+
     @OneToMany(mappedBy="department")
     private List<Employee> employees;
-     
+
     public Department() {
     }
-    
+
     public Department(String name) {
         this.name = name;
     }
@@ -27,15 +27,15 @@ public class Department extends BaseEntity {
     public String getName() {
         return name;
     }
-    
+
     public void setName(String name) {
         this.name = name;
     }
-    
+
     public List<Employee> getEmployees() {
         return employees;
     }
-    
+
     public void setEmployees(List<Employee> employees) {
         this.employees = employees;
     }
@@ -59,7 +59,7 @@ public class Department extends BaseEntity {
             return false;
         }
         final Department other = (Department) obj;
-        if ((this.name == null) ? (other.name != null) : 
+        if ((this.name == null) ? (other.name != null) :
                 !this.name.equals(other.name)) {
             return false;
         }

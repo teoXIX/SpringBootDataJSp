@@ -33,7 +33,7 @@ public class DepartmentController {
         return "departments";
     }
 
-   @RequestMapping(value = "/registration", method = RequestMethod.POST)
+    @RequestMapping(value = "/registration", method = RequestMethod.POST)
     public String createDepartment(@RequestParam(value = "name", required = true) String name, Model model) {
         logger.debug("department registration() invoked");
 
@@ -54,7 +54,7 @@ public class DepartmentController {
 
     @RequestMapping(value = "/delete", method = RequestMethod.GET)
     public String deleteDepartment(@RequestParam(value = "id", required = true) int uid,
-           Model model) {
+                                   Model model) {
         logger.debug("delete registration() invoked");
 
         List<Department> list;

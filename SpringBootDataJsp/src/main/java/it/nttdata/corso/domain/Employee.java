@@ -9,21 +9,21 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "employee")
 public class Employee extends BaseEntity {
-    
+
     private static final long serialVersionUID = 1L;
-    
+
     private String fullname;
-    
+
     private String email;
-    
+
     private char gender = 'M';
-    
+
     @ManyToOne
     private Department department;
 
     public Employee() {
     }
-    
+
     public Employee(String fullname, String email, char gender) {
         this.fullname = fullname;
         this.email = email;
@@ -89,7 +89,7 @@ public class Employee extends BaseEntity {
 
     @Override
     public String toString() {
-        return "Employee {id=" + this.getId() + ", fullname=" + fullname + 
+        return "Employee {id=" + this.getId() + ", fullname=" + fullname +
                 ", email=" + email + ", gender=" + gender + '}';
     }
 }

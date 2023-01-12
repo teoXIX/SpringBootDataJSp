@@ -34,10 +34,10 @@ public class EmployeeController {
     public ModelAndView employeeHome() {
         logger.debug("employee home() invoked");
         ModelAndView model = new ModelAndView("employees", "newEmployee", new Employee());
-        
+
         List<Employee> employees;
         List<Department> departments;
-      
+
         employees = employeeBO.findAllUsers();
         departments = departmentBO.findAllDepartments();
         model.addObject("employees", employees);
@@ -51,9 +51,9 @@ public class EmployeeController {
     public ModelAndView employeeRegistration(Employee employee) {
         logger.debug("employee registration() invoked");
 
-        ModelAndView model = new ModelAndView("employees", 
+        ModelAndView model = new ModelAndView("employees",
                 "newEmployee", new Employee());
-      
+
         List<Employee> employees;
         List<Department> departments;
 
@@ -62,7 +62,7 @@ public class EmployeeController {
             employees = employeeBO.findAllUsers();
             departments = departmentBO.findAllDepartments();
 
-            model.addObject("response", 
+            model.addObject("response",
                     new ClientResponse(true, "Operation success"));
             model.addObject("employees", employees);
             model.addObject("departments", departments);
@@ -79,7 +79,7 @@ public class EmployeeController {
         logger.debug("employee searchByEmail() invoked, email=" + email);
 
         ModelAndView model = new ModelAndView("employees", "newEmployee", new Employee());
-     
+
         List<Employee> employees;
         List<Department> departments;
 
@@ -96,16 +96,16 @@ public class EmployeeController {
 
         return model;
     }
-    
+
     @PostMapping(value = "/search/genderAndDepartment")
-    public ModelAndView searchByGenderAndDepartmentName(@RequestParam char gender, 
-            @RequestParam String depName) {
+    public ModelAndView searchByGenderAndDepartmentName(@RequestParam char gender,
+                                                        @RequestParam String depName) {
         logger.debug("employee searchByGenderAndDepartmentName() invoked, "
                 + "depName=" + depName);
 
         ModelAndView model = new ModelAndView("employees", "newEmployee",
                 new Employee());
-     
+
         List<Employee> employees;
         List<Department> departments;
 
@@ -122,14 +122,14 @@ public class EmployeeController {
 
         return model;
     }
-    
+
     @PostMapping("/search/department")
     public ModelAndView searchByDepartment(@RequestParam String depName) {
         logger.debug("employee searchByDepartment() invoked, depName=" + depName);
 
         ModelAndView model = new ModelAndView("employees", "newEmployee",
                 new Employee());
-     
+
         List<Employee> employees;
         List<Department> departments;
 
@@ -146,7 +146,7 @@ public class EmployeeController {
 
         return model;
     }
-    
+
     @GetMapping("/delete")
     public ModelAndView deleteEmployee(@RequestParam(value = "id", required = true) Integer uid) {
         logger.debug("delete() employee invoked");

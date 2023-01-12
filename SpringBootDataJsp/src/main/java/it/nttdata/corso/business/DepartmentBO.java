@@ -8,12 +8,12 @@ import java.util.Optional;
 
 public interface DepartmentBO {
   public void delete(int uid);
- 
+
   public List<Department> findAllDepartments();
- 
+
   public Optional<Department> findByUid(int uid);
-   
+
   public void save(Department department);
- 
-  public void update(Department department);  
+
+  public void update(Department department);
 }
